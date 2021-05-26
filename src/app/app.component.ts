@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ComponentsService } from 'projects/lib-core/components/src';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng-debug-library';
+
+  constructor(private componentsService: ComponentsService) {
+
+  }
+  ngOnInit (): void {
+
+    this.componentsService.test();
+  }
 }

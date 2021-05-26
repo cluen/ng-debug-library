@@ -125,6 +125,46 @@
           }
         }
       }
+    },
+    "@lib-core/components": {
+      "projectType": "library",
+      "root": "projects/lib-core/components",
+      "sourceRoot": "projects/lib-core/components/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/lib-core/components/tsconfig.lib.json",
+            "project": "projects/lib-core/components/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/lib-core/components/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/lib-core/components/src/test.ts",
+            "tsConfig": "projects/lib-core/components/tsconfig.spec.json",
+            "karmaConfig": "projects/lib-core/components/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/lib-core/components/tsconfig.lib.json",
+              "projects/lib-core/components/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ng-debug-library"
