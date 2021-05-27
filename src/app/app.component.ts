@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ComponentsService } from 'projects/lib-core/components/src';
+import { ComponentsService } from '@lib-core/components';
 
 @Component({
   selector: 'app-root',
